@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  conanexiles:
+    image: alinmear/docker-conanexiles
+    restart: always
+    environment:
+        - "CONANEXILES_ServerSettings_ServerSettings_AdminPassword=SetYourPassword"
+        - "CONANEXILES_Engine_OnlineSubSystemSteam_ServerName='Conanzada'"
+        - "CONANEXILES_Engine_OnlineSubSystemSteam_ServerPassword="
+    ports:
+        - 7777:7777/udp
+        - 7778:7778/udp
+        - 27015:27015/udp
+    volumes:
+        - /server-data:/conanexiles
